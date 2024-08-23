@@ -1,5 +1,4 @@
 import { prisma } from "@/utils/prisma";
-import { Prisma } from "@prisma/client";
 import { compare } from "bcrypt";
 import type {
     GetServerSidePropsContext,
@@ -35,7 +34,7 @@ export const authOptions: NextAuthOptions = {
                         },
                     })
                 } catch (e) {
-                    if (e instanceof Prisma.PrismaClientKnownRequestError) {
+                    if (e) {
                         return null;
                     }
                 }
