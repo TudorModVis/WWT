@@ -119,6 +119,13 @@ export async function GET () {
         user = await prisma.user.findUnique({
             where: {
               email: session.user?.email,
+            },
+            select: {
+                firstname: true,
+                lastname: true,
+                email: true,
+                dob: true,
+                phone_number: true
             }
           })
     } catch (e) {
@@ -129,5 +136,5 @@ export async function GET () {
 
     if (!user) return Response.json({ msg: "User not found!"}, {status: 400});
 
-    return Response.json({ msg: "User found successfully!", user: user}, {status: 201});
+    return Response.json(user, {status: 200});
 }
