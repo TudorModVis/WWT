@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@prisma/client": "^5.18.0",
     "@react-email/components": "^0.0.22",
     "again": "^0.0.1",
     "bcrypt": "^5.1.1",
