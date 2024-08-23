@@ -55,7 +55,6 @@ export const authOptions: NextAuthOptions = {
                     email: user.email,
                     dob: user.dob,
                     phone_number: user.phone_number,
-                    sex: user.sex,
                 };
             }
         })
